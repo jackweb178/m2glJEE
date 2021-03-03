@@ -16,7 +16,7 @@ public class ProfesseurRepository {
         this.professeurs = new ArrayList<Professeur>();
     }
 
-    public Professeur[] getAllByProfesseur(List<Classe> classes){
+    public Professeur[] getAllByProfesseur(Classe classes){
         professeurs.add(new Professeur(1, "Abdoulaye", "Diallo",classes));
         professeurs.add(new Professeur(2, "Mamadou", "Bah",classes));
         professeurs.add(new Professeur(3, "Aboubacar", "Ndiaye",classes));

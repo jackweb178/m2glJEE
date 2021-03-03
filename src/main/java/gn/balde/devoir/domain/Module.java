@@ -5,9 +5,9 @@ import java.util.List;
 public class Module {
     private int id;
     private String libelle;
-    private List<Matiere> matieres;
+    private Matiere matieres;
 
-    public Module(int id, String libelle, List<Matiere> matieres) {
+    public Module(int id, String libelle, Matiere matieres) {
         this.id = id;
         this.libelle = libelle;
         this.matieres = matieres;
@@ -30,11 +30,11 @@ public class Module {
     }
 
 
-    public List<Matiere> getMatieres() {
+    public Matiere getMatieres() {
         return matieres;
     }
 
-    public void setMatieres(List<Matiere> matieres) {
+    public void setMatieres(Matiere matieres) {
         this.matieres = matieres;
     }
 }

@@ -18,7 +18,7 @@ public class DevoirApp {
 
     public static void main(String[] args) {
         System.out.println("Bienvenu sur la plateforme de gestion des emplois");
-        System.out.println("> l pour lister les services disponibles ");
+        System.out.println("> all pour lister les choix disponibles ");
         Scanner scanner = new Scanner(System.in);
         String menu = scanner.next();
 
@@ -30,7 +30,7 @@ public class DevoirApp {
         Module[] modulesListe = moduleRepository.getAll();
         MatiereRepository matiereRepository = new MatiereRepository();
 
-        if ("l".equalsIgnoreCase(menu)){
+        if ("all".equalsIgnoreCase(menu)){
 
             /************ Liste des classes ************/
             System.out.println("Liste des classe disponible");
@@ -63,16 +63,17 @@ public class DevoirApp {
                 int idModule = scanner.nextInt();
 
                 //avoir une classe sur demande
-                List<Module> modules = Collections.singletonList(moduleRepository.getById(idModule));
+                //List<Module> modules = Collections.singletonList(moduleRepository.getById(idModule));
+                Module modules = moduleRepository.getById(idModule);
 
                 // afficher les modules par classe
                 Matiere[] matieres = matiereRepository.getAllByModule(modules);
 
                 //les profs qui enseigne dans cette classe
-                System.out.println(String.format("La liste des matieres du module %s :", modules.get(0).getLibelle()));
+                System.out.println(String.format("La liste des matieres du module %s :", modules.getLibelle()));
                 for (int i = 0; i < matieres.length; i++) {
                     Matiere matiere = matieres[i];
-                    System.out.println(String.format("> %s %s %s ", matiere.getId(),matiere.getLibelle(),modules.get(0).getLibelle()));
+                    System.out.println(String.format("> %s %s %s ", matiere.getId(),matiere.getLibelle(),modules.getLibelle()));
                 }
             break;
 
@@ -82,14 +83,15 @@ public class DevoirApp {
                 int idClasse = scanner.nextInt();
 
                 //avoir une classe sur demande
-                List<Classe> classe = Collections.singletonList(classeRepository.getById(idClasse));
+                //List<Classe> classe = Collections.singletonList(classeRepository.getById(idClasse));
+                Classe classe = classeRepository.getById(idClasse);
 
                 // afficher les modules par classe
                 ProfesseurRepository professeurRepository = new ProfesseurRepository();
                 Professeur[] professeurs = professeurRepository.getAllByProfesseur(classe);
 
                 //les profs qui enseigne dans cette classe
-                System.out.println(String.format("La liste des professeurs %s :", classe.get(0).getLibelle()));
+                System.out.println(String.format("La liste des professeurs %s :", classe.getLibelle()));
                 for (int i = 0; i < professeurs.length; i++) {
                     Professeur professeur = professeurs[i];
                     System.out.println(String.format("> %s %s %s ", professeur.getId(), professeur.getNom(), professeur.getPrenom()));

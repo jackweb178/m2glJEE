@@ -6,9 +6,9 @@ public class Professeur {
     private int id;
     private String prenom;
     private String nom;
-    private  List<Classe> classes;
+    private  Classe classes;
 
-    public Professeur(int id, String prenom, String nom, List<Classe> classes) {
+    public Professeur(int id, String prenom, String nom, Classe classes) {
         this.id = id;
         this.prenom = prenom;
         this.nom = nom;
@@ -39,11 +39,11 @@ public class Professeur {
         this.nom = nom;
     }
 
-    public List<Classe> getClasses() {
+    public Classe getClasses() {
         return classes;
     }
 
-    public void setClasses(List<Classe> classes) {
+    public void setClasses(Classe classes) {
         this.classes = classes;
     }
 }

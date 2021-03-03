@@ -10,7 +10,7 @@ import java.util.List;
 
 public class ModuleRepository {
 
-    private static List<Matiere> matieres;
+    private static Matiere matieres;
     public  static  final Module[] MODULES = {
             new Module(1,"Module 1",matieres),
             new Module(2,"Module 2", matieres),
@@ -24,7 +24,7 @@ public class ModuleRepository {
         this.modules = new ArrayList<Module>();
     }
 
-    public Module[] getAllByModule(List<Matiere> matieres){
+    public Module[] getAllByModule(Matiere matieres){
         modules.add(new Module(1,MODULES[1].getLibelle() ,matieres));
         modules.add(new Module(1,MODULES[1].getLibelle() , matieres));
         modules.add(new Module(1, MODULES[1].getLibelle(), matieres));

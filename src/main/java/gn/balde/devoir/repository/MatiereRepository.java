@@ -10,7 +10,7 @@ import java.util.List;
 
 public class MatiereRepository {
 
-    private static List<Module> modules;
+    private static Module modules;
 
     public static  final Matiere[] MATIERES= {
             new Matiere(1,"JEE" ,modules),
@@ -36,7 +36,7 @@ public class MatiereRepository {
         this.matieres = new ArrayList<Matiere>();
     }
 
-    public Matiere[] getAllByModule(List<Module> modules){
+    public Matiere[] getAllByModule(Module modules){
         matieres.add(new Matiere( MATIERES[0].getId(),MATIERES[0].getLibelle(), modules));
         matieres.add(new Matiere( MATIERES[1].getId(),MATIERES[1].getLibelle(), modules));
         matieres.add(new Matiere( MATIERES[2].getId(),MATIERES[2].getLibelle(), modules));

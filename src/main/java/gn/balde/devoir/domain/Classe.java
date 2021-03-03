@@ -6,9 +6,9 @@ public class Classe {
     private int id;
     private String libelle;
 
-    private List<Module> modules;
+    private Module modules;
 
-    public Classe(int id, String libelle, List<Module> modules) {
+    public Classe(int id, String libelle, Module modules) {
         this.id = id;
         this.libelle = libelle;
         this.modules = modules;
@@ -30,11 +30,11 @@ public class Classe {
         this.libelle = libelle;
     }
 
-    public List<Module> getModules() {
+    public Module getModules() {
         return modules;
     }
 
-    public void setModules(List<Module> modules) {
+    public void setModules(Module modules) {
         this.modules = modules;
     }
 }

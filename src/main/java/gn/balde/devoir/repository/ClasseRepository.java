@@ -10,7 +10,7 @@ public class ClasseRepository {
     //public List<Module> modules;
 
 
-    private static List<Module> modules;
+    private static Module modules;
 
     public static final Classe[] CLASSES = {
         new Classe(1,"Master2 GL",modules),
